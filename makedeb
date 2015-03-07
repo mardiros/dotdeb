@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# set -e
+apt-get update
+
+mk-build-deps
+dpkg -i  --force-depends *-build-deps_*.deb
+apt-get -fy install
+debuild -us -uc -b -i
+rm *-build-deps_*.deb
+mv ../*.deb .
+
