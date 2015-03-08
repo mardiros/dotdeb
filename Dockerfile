@@ -74,5 +74,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 VOLUME ["/aptly"]
 VOLUME ["/root"]
+EXPOSE 8765
 
 WORKDIR /mnt
+
