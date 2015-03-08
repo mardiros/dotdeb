@@ -8,8 +8,10 @@ Build you package, and host them with aptly using a docker container.
 
 ```bash
 
-docker pull mardiros/dotdeb             # Pull the docker image
-      # Create a directory to mount volumes
+docker pull mardiros/dotdeb                     # Pull the docker image
+mkdir -p ${HOME}/workspace/aptly/{aptly,root}   # Create a directory to mount volumes
+
+# Create an alias to keep "runtime" configuration of the container
 alias dotdeb='docker run -t -i -v ${HOME}/workspace/aptly/repo:/aptly \
     -v ${HOME}/workspace/aptly/root:/root \
     -v $(pwd):/mnt \
@@ -23,7 +25,7 @@ Note that the volume `/dev/urandom:/dev/random` is mount in order to
 facilitate the creation of the GPG key. The GPG key is saved in the `/root` volume,
 and the repo is created in the `/aptly` volume.
 The current dir is mounted in `/mnt`, it is used when building the debian package.
-
+The port `8765` will be used to serve the repository.
 
 ### create the repository
 
