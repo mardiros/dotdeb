@@ -6,7 +6,6 @@ if [ ! -e /root/.gnupg ]; then
 fi
 
 apt-key add /root/gpg.key
-apt-get update
 
 exec "$@"
 

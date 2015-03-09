@@ -1,5 +1,7 @@
 #! /bin/bash
 
+apt-get update
+
 set -e
 mk-build-deps
 dpkg -i  --force-depends *-build-deps_*.deb

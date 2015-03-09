@@ -82,6 +82,8 @@ Then, you can test that packages are instalable.
 
 ```bash
 dotdeb /bin/bash
+apt-get update
+apt-get install my_package
 ```
 
 
