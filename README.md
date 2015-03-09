@@ -18,7 +18,7 @@ alias dotdeb='docker run -t -i -v ${HOME}/workspace/aptly/repo:/aptly \
     -v ${HOME}/workspace/aptly/root:/root \
     -v $(pwd):/mnt \
     -v /dev/urandom:/dev/random \
-    -v ${HOME}/workspace/aptly/sources.list.d:/etc/apt/sources.list.d
+    -v ${HOME}/workspace/aptly/sources.list.d:/etc/apt/sources.list.d \
     mardiros/dotdeb'
 
 # Create a specific alias to expose the port
