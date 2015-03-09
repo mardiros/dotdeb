@@ -53,7 +53,6 @@ dotdeb makedeb
 ### Push it in the repository
 
 ```bash
-cd a_project_having_a_debian_directory
 dotdeb aptly -architectures=amd64 repo add aptly-release *.deb
 dotdeb aptly publish repo  -architectures=amd64  aptly-release
 ```
