@@ -72,5 +72,16 @@ dotdeb aptly publish update wheezy
 dotdeb-serve
 ```
 
+### Go further
+
+
+Now, you can add the server in a new file in the
+directory `${HOME}/workspace/aptly/sources.list.d/`.
+
+Then, you can test that packages are instalable.
+
+```bash
+dotdeb /bin/bash
+```
 
 
