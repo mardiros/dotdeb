@@ -10,16 +10,9 @@ MAINTAINER Guillaume Gauvrit <guillaume@gauvr.it>
 # https://registry.hub.docker.com/u/tianon/debian-devel/dockerfile/
 
 
-# Instructions from: http://www.aptly.info/download/
-RUN echo "deb http://repo.aptly.info/ squeeze main" > /etc/apt/sources.list.d/aptly.list; \
-apt-key adv --keyserver keys.gnupg.net --recv-keys 2A194991; \
-apt-get update; \
-apt-get install -y aptly
-
-
-
 # normal build deps
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
+        aptly \
         bash-completion curl less rsync vim wget \
         build-essential \
         devscripts \
