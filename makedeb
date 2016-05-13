@@ -5,7 +5,7 @@ apt-get update
 set -e
 mk-build-deps
 dpkg -i  --force-depends *-build-deps_*.deb
-apt-get -fy install
+apt-get -fy --force-yes install
 debuild -us -uc -b -i
 rm *-build-deps_*.deb
 mv ../*.deb .
