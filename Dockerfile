@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y \
         openssh-client \
         python-distro-info \
         python-debian \
+        python3-venv \
         quilt \
         --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
