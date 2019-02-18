@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
         build-essential \
         devscripts \
         dh-make \
+        dh-virtualenv \
         equivs \
         git bzr mercurial subversion \
         git-buildpackage svn-buildpackage \
