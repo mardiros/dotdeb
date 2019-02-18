@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Guillaume Gauvrit <guillaume@gauvr.it> 
 
 
@@ -9,8 +9,15 @@ MAINTAINER Guillaume Gauvrit <guillaume@gauvr.it>
 # https://registry.hub.docker.com/u/mikepurvis/aptly/dockerfile/
 # https://registry.hub.docker.com/u/tianon/debian-devel/dockerfile/
 
+RUN  apt-get update && \
+     apt-get install -y gnupg2 && \
+     mkdir ~/.gnupg && \
+     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf && \
+     echo "deb http://repo.aptly.info/ squeeze main" > /etc/apt/sources.list.d/aptly.list
 
-# normal build deps
+# Instructions from: https://www.aptly.info/download/
+RUN apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED75B5A4483DA07C
+
 RUN apt-get update && apt-get install -y \
         aptly \
         bash-completion curl less rsync vim wget \
