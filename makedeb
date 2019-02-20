@@ -6,7 +6,7 @@ set -e
 mk-build-deps
 dpkg -i  --force-depends *-build-deps_*.deb
 apt-get -fy --force-yes install
-debuild -us -uc -b -i
+debuild -us -uc -b
 rm *-build-deps_*.deb
 mv ../*.deb .
 

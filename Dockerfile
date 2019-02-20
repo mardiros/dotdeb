@@ -32,7 +32,6 @@ RUN apt-get update && apt-get install -y \
         libdistro-info-perl \
         libfile-fcntllock-perl \
         libwww-perl \
-        lintian \
         openssh-client \
         python-distro-info \
         python-debian \
